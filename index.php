@@ -11,6 +11,7 @@
     </header>
     <main>
         <h1>Route Scout</h1><p>ddit is een beschrijving</p>
+        <p>tweede beschrijving</p>
         <?php phpinfo(); ?>
     </main>
 </body>
