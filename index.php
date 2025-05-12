@@ -10,7 +10,7 @@
 
     </header>
     <main>
-        <h1>Route Scout</h1>
+        <h1>Route Scout</h1><p>ddit is een beschrijving</p>
         <?php phpinfo(); ?>
     </main>
 </body>
