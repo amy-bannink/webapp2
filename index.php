@@ -11,7 +11,7 @@
     </header>
     <main>
         <h1>Route Scout dit is aangepast door FERDINAND </h1>
-        <h1>HELP</h1>
+        <h1>HELP Amy!SSS</h1>
         <?php phpinfo(); ?>
     </main>
 </body>
