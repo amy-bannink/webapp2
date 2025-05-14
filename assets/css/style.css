@@ -1,8 +1,66 @@
 * {
     margin: 0;
+    font-family: Outfit;
+    cursor: default;
 }
+.hover-pointer:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: all 0.3s;
+}
+li a {
+    display: block;
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 30px;
+    border-width: 3px;
+    border-radius: 9px;
+}
+
 header {
     background-color: #B3C0A4;
     width: 100vw;
-    height: 400px;
+    height: 491px;
+}
+
+.logo-wrapper {
+    display:flex;
+}
+.logo {
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/logo.png);
+     background-repeat:no-repeat;
+    background-size: contain;
+}
+.blue-text {
+    color: #505168;
+}
+.slogan-big {
+    margin-top:30px;
+    font-size:50px;
+    font-weight:bolder;
+}
+.slogan-small {
+    margin-top:15px;
+    font-size:30px;
+    font-weight:normal;
+}
+
+main {
+    background-color: #EAEFD3;
+    height: 492px;
+}
+
+@media screen and (min-width: 900px){
+    header {
+       background-color: red;
+       height: 250px;
+    }
+    .extra-header {
+        display:none;
+    }
+    .extra-main {
+        display:none;
+    }
 }

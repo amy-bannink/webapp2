@@ -8,19 +8,20 @@
     <title>Document</title>
 </head>
 <body>
+
     <header>
-        <div class="slogan"></div>
-
+        <?php
+            include('./includes/header.php');
+            ?>
     </header>
-    <main>
 
-        <h1>Route Scout</h1><p>ddit is een beschrijving</p>
-        <p>tweede beschrijving</p>
-        <h1>Route Scout dit is aangepast door FERDINAND </h1>
-        <h1>HELP Amy!SSS</h1>
-        <?php phpinfo(); ?>
+    <main>
+        <div class="wrapper">
+            <div class="extra-header"></div>
+            <div class="extra-main"></div>
+        </div>
+
     </main>
+
 </body>
 </html>
-
-<h1>easteregg</h1>
