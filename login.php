@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
-    <header>
 
+    <header>
+        <?php
+            include('./includes/header.php');
+            ?>
     </header>
+
     <main>
-        <h1>Route Scout dit is aangepast door FERDINAND </h1>
-        <h1>HELP Amy!SSS</h1>
-        <?php phpinfo(); ?>
     </main>
+
 </body>
 </html>

@@ -1,34 +1,48 @@
 * {
     margin: 0;
+    padding: 0;
     font-family: Outfit;
     cursor: default;
 }
 .hover-pointer:hover {
     cursor: pointer;
-    scale: 1.1;
-    transition: all 0.3s;
+    color: #27233A;
 }
-li a {
-    display: block;
-    text-align: center;
-    padding: 4px 6px;
-    font-size: 30px;
-    border-width: 3px;
-    border-radius: 9px;
-}
-
+/* header start */
 header {
+    position: relative;
     background-color: #B3C0A4;
     width: 100vw;
-    height: 491px;
+    height: 450px;
 }
-
+.profile-icon-link {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  display: block;
+}
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .logo-wrapper {
     display:flex;
+    align-items: flex-start;
+}
+.slogan-wrapper {
+    display:flex;
+    flex-direction: column;
+}
+.preference-wrapper {
+    display: flex;
+    justify-content: space-around;
 }
 .logo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin-bottom: 0;
     background-image: url(../img/logo.png);
      background-repeat:no-repeat;
     background-size: contain;
@@ -37,30 +51,58 @@ header {
     color: #505168;
 }
 .slogan-big {
-    margin-top:30px;
-    font-size:50px;
+    margin-top:14%;
+    font-size:200%;
     font-weight:bolder;
 }
 .slogan-small {
-    margin-top:15px;
-    font-size:30px;
+    margin-top:3%;
+    font-size:55%;
     font-weight:normal;
 }
-
+ul {
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+}
+li a {
+    margin: 20px;
+    font-size:200%;
+    text-decoration: none;
+}
+.preference-list{
+    background-color: #DCC48E;
+    margin-top: 30px;
+    width: 250px;
+    height: 600px;
+    border-radius: 40px;
+}
+@media screen and (min-width: 650px){
+    .preference-list{
+        height: 100px;
+        width: 80%;
+        margin-bottom: 30px;
+    }
+    header{
+        height:auto;
+    }
+}
+@media screen and (min-width: 1050px){
+    li a {
+        margin-right: 30px;
+        font-size: 150%;
+    }
+    ul {
+    position: absolute;
+    top: 70px;
+    right: 100px;
+    }
+    .preference-list{
+        margin-top: 0;
+    }
+}
+/* header stop */
 main {
     background-color: #EAEFD3;
-    height: 492px;
-}
-
-@media screen and (min-width: 900px){
-    header {
-       background-color: red;
-       height: 250px;
-    }
-    .extra-header {
-        display:none;
-    }
-    .extra-main {
-        display:none;
-    }
+    height: 2000px;
 }
