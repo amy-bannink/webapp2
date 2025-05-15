@@ -19,12 +19,20 @@
         </a>
         <div class="preference-wrapper">
             <div class="preference-list">
-                <p>Where</p>
-                <p>Check-in</p>
-                <p>Check-out</p>
-                <p>Who</p>
-                <p>Flight</p>
-                <div class="search">Search</div>
+                <p class="preference-items preference-top hover-pointer">Where</p>
+                <div class="preference-line"></div>
+                <p  class="preference-items hover-pointer">Check-in</p>
+                <div class="preference-line"></div>
+                <p  class="preference-items hover-pointer">Check-out</p>
+                <div class="preference-line"></div>
+                <p  class="preference-items hover-pointer">Who</p>
+                <div class="preference-line"></div>
+                <label class="custom-checkbox preference-items hover-pointer">
+                    <input type="checkbox" />
+                    <span class="checkmark hover-pointer"></span>
+                    Flight
+                </label>
+                <div class="search preference-items preference-bottom hover-pointer">Search</div>
             </div>
         </div>
     </header>

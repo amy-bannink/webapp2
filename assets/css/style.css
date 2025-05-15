@@ -7,6 +7,8 @@
 .hover-pointer:hover {
     cursor: pointer;
     color: #27233A;
+    scale: 1.1;
+    transition: all 0.3s;
 }
 /* header start */
 header {
@@ -66,22 +68,93 @@ ul {
     list-style: none;
 }
 li a {
-    margin: 20px;
+    display:inline-block;
     font-size:200%;
     text-decoration: none;
 }
 .preference-list{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #DCC48E;
     margin-top: 30px;
     width: 250px;
     height: 600px;
-    border-radius: 40px;
+    border-radius: 50px;
 }
-@media screen and (min-width: 650px){
+.preference-items {
+    font-size: 150%;
+}
+.preference-top {
+    margin-top: 30px;
+}
+.preference-bottom {
+    margin-bottom: 20px;
+}
+.preference-line {
+    background-color: #000000;
+    height: 1px;
+    width: 170px;
+}
+.search {
+    text-align:center;
+    padding-top: 25px;
+    background-color: #505168;
+    color: #DCC48E;
+    border-radius: 40px;
+    width: 180px;
+    height: 55px;
+}
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.custom-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #DCC48E;
+  border: 4px solid #000000;
+  margin-right: 10px;
+  border-radius: 6px;
+  position: relative;
+}
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 10px;
+  height: 10px;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+@media screen and (min-width: 803px){
     .preference-list{
         height: 100px;
         width: 80%;
         margin-bottom: 30px;
+        flex-direction:row;
+    }
+    .preference-line {
+        height: 70px;
+        width: 1px;
+    }
+    .preference-top {
+        margin: 0;
+        margin-left: 20px;
+    }
+    .preference-bottom {
+        margin: 0;
+        margin-right: 20px;
+    }
+    .search {
+        width: 120px;
     }
     header{
         height:auto;
@@ -104,5 +177,6 @@ li a {
 /* header stop */
 main {
     background-color: #EAEFD3;
+    width: 100vw;
     height: 2000px;
 }
