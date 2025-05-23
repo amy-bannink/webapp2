@@ -52,15 +52,15 @@ header {
 .blue-text {
     color: #505168;
 }
-.slogan-big {
-    margin-top:14%;
-    font-size:200%;
+.slogan-big{
+    font-size: 100%;
+    margin-top:40%;
     font-weight:bolder;
-}
-.slogan-small {
-    margin-top:3%;
-    font-size:55%;
+} 
+.slogan-small{
+    font-size: 27%;
     font-weight:normal;
+    margin-top:3%;
 }
 ul {
     display:flex;
@@ -178,6 +178,17 @@ input[type=number]::-webkit-outer-spin-button {
     header{
         height:auto;
     }
+    .slogan-big {
+    margin-top:14%;
+    font-weight:bolder;
+    font-size:200%;
+    }
+    .slogan-small {
+        margin-top:3%;
+        font-size:55%;
+        font-weight:normal;
+    }
+   
 }
 @media screen and (min-width: 1050px){
     li a {
@@ -192,6 +203,17 @@ input[type=number]::-webkit-outer-spin-button {
     .preference-list{
         margin-top: 0;
     }
+      .slogan-big {
+    margin-top:14%;
+    font-size:200%;
+    font-weight:bolder;
+    }
+    .slogan-small {
+        margin-top:3%;
+        font-size:55%;
+        font-weight:normal;
+    }
+   
 }
 /* header stop */
 /* main start */
