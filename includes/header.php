@@ -2,7 +2,7 @@
     <div class="logo-wrapper">
         <div class="logo"></div>
         <div class="slogan-wrapper">
-            <h1 class="blue-text slogan-big">Find your next stay<h1>
+                <h1 class="blue-text slogan-big">Find your next stay</h1>
                     <p class="blue-text slogan-small">Scout the way. Embrace the journey.</p>
         </div>
     </div>
@@ -18,7 +18,7 @@
         <img src="../assets/img/person.png" alt="Profile" class="profile-pic hover-pointer">
     </a>
     <div class="preference-wrapper">
-        <form action="" class="preference-list">
+    <form action="search-handler.php" method="POST" class="preference-list" id="searchForm">
             <div>
                 <label class="preference-items" where>
                     <input type="text" id="where" name="where" class="input-inline preference-top" placeholder="Where">
@@ -50,12 +50,14 @@
             <div class="preference-line"></div>
 
             <label class="custom-checkbox preference-items">
-                <input type="checkbox" />
+                <input type="checkbox" id="flight"/>
                 <span class="checkmark"></span>
                 Flight
             </label>
             <button type="submit" class="search preference-items preference-bottom hover-pointer">Search</button>
-        </form>
+        </form>`
     </div>
-    <script src="./assets/js/who.js"></script>
+    <script src="../assets/js/search-form.js"></script>
+
+    <!-- <script src="./assets/js/*"></script> -->
 </header>
