@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <header>
+    <header class="contact">
         <?php
             include('./includes/header.php');
             ?>
@@ -18,5 +18,10 @@
     <main>
     </main>
 
+    <footer>
+        <?php
+            include('./includes/footer.php');
+            ?>
+    </footer>
 </body>
 </html>

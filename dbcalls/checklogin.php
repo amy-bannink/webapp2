@@ -1,7 +1,7 @@
 <?php
     include("conn.php");
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password;");
-    $stmt->bindParam(":username", $_POST['username']);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = :user_id AND password = :password;");
+    $stmt->bindParam(":user_id", $_POST['user_id']);
     $stmt->bindParam(":password", $_POST['password']);
     $stmt->execute();
     $result = $stmt->fetch();
@@ -9,8 +9,8 @@
     session_start();
 
 if ($result){
-    $_SESSION['username'] = $result['username'];
+    $_SESSION['user_id'] = $result['user_id'];
 }
 else{
-    echo 'no bitches?';
+    echo 'no account';
 }

@@ -8,10 +8,10 @@
     </div>
     <nav>
         <ul>
-            <li><a href="../index.php" class="hover-pointer blue-text">Home</a></li>
-            <li><a href="../contact.php" class="hover-pointer blue-text">Contact</a></li>
-            <li><a href="../reviews.php" class="hover-pointer blue-text">Reviews</a></li>
-            <li><a href="../login.php" class="hover-pointer blue-text">Login</a></li>
+            <li><a href="../index.php" class="hover-pointer blue-text home-button">Home</a></li>
+            <li><a href="../contact.php" class="hover-pointer blue-text contact-button">Contact</a></li>
+            <li><a href="../reviews.php" class="hover-pointer blue-text reviews-button">Reviews</a></li>
+            <li><a href="../sign_up.php" class="hover-pointer blue-text">Sign up</a></li>
         </ul>
     </nav>
     <a href="../login.php" class="profile-icon-link">
@@ -21,7 +21,7 @@
         <form action="" class="preference-list">
             <div>
                 <label class="preference-items" where>
-                    <input type="text" id="where" name="where" class="input-inline preference-top" placeholder="Where">
+                    <input type="text" id="where" name="where" class="input-inline preference-top normal-hover-pointer" placeholder="Where">
                 </label>
             </div>
 
@@ -43,7 +43,7 @@
 
             <div>
                 <label class="preference-items">
-                    <input type="number" id="who" name="who" class="input-inline" placeholder="How many" min="1">
+                    <input type="number" id="who" name="who" class="input-inline normal-hover-pointer" placeholder="How many" min="1">
                 </label>
             </div>
 
@@ -51,7 +51,7 @@
 
             <label class="custom-checkbox preference-items">
                 <input type="checkbox" />
-                <span class="checkmark"></span>
+                <span class="checkmark normal-hover-pointer"></span>
                 Flight
             </label>
             <button type="submit" class="search preference-items preference-bottom hover-pointer">Search</button>

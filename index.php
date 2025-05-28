@@ -9,13 +9,16 @@
 </head>
 <body>
 
-    <header>
+    <header class="index">
         <?php
             include('./includes/header.php');
             ?>
     </header>
 
     <main>
+        <?php
+        include('./dbcalls/conn.php');
+        ?>
     </main>
 
     <footer>

@@ -9,14 +9,20 @@
 </head>
 <body>
 
-    <header>
+    <header class="reviews">
         <?php
             include('./includes/header.php');
             ?>
     </header>
 
     <main>
+
     </main>
 
+    <footer>
+        <?php
+            include('./includes/footer.php');
+            ?>
+    </footer>
 </body>
 </html>
