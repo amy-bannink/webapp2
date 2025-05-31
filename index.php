@@ -17,30 +17,38 @@
 
     <main class="main-home">
   <section class="home-grid">
-    <div class="grid-item">
-      <img src="./assets/img/france.jpg" alt="France">
-      <div class="label">France</div>
-    </div>
-    <div class="grid-item">
-      <img src="./assets/img/portugal.jpg" alt="Portugal">
-      <div class="label">Portugal</div>
-    </div>
-    <div class="grid-item">
-      <img src="./assets/img/spain.jpg" alt="Spain">
-      <div class="label">Spain</div>
-    </div>
-    <div class="grid-item">
-      <img src="./assets/img/france.jpg" alt="France">
-      <div class="label">France</div>
-    </div>
-    <div class="grid-item">
-      <img src="./assets/img/portugal.jpg" alt="Portugal">
-      <div class="label">Portugal</div>
-    </div>
-    <div class="grid-item">
-      <img src="./assets/img/spain.jpg" alt="Spain">
-      <div class="label">Spain</div>
-    </div>
+    <?php 
+    include('./dbcalls/read.php');
+     foreach ($result as $trip){
+      echo '<div class="grid-item"> 
+            <img src="'. $trip['location_img'] . '" alt="France">
+            <div class="label">' . $trip['location'] . '</div></div>';
+         }
+    ?>
+            <!-- // <div class="grid-item">
+    //   <img src="./assets/img/france.jpg" alt="France">
+    //   <div class="label">France</div>
+    // </div>
+    // <div class="grid-item">
+    //   <img src="./assets/img/portugal.jpg" alt="Portugal">
+    //   <div class="label">Portugal</div>
+    // </div>
+    // <div class="grid-item">
+    //   <img src="./assets/img/spain.jpg" alt="Spain">
+    //   <div class="label">Spain</div>
+    // </div>
+    // <div class="grid-item">
+    //   <img src="./assets/img/france.jpg" alt="France">
+    //   <div class="label">France</div>
+    // </div>
+    // <div class="grid-item">
+    //   <img src="./assets/img/portugal.jpg" alt="Portugal">
+    //   <div class="label">Portugal</div>
+    // </div>
+    // <div class="grid-item">
+    //   <img src="./assets/img/spain.jpg" alt="Spain">
+    //   <div class="label">Spain</div>
+    // </div> -->
   </section>
 </main>
 
