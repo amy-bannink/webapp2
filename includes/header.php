@@ -61,8 +61,6 @@
 
             <label class="custom-checkbox preference-items">
                 <input type="checkbox" id="flight"/>
-                <span class="checkmark"></span>
-                <input type="checkbox" />
                 <span class="checkmark normal-hover-pointer"></span>
                 Flight
             </label>
