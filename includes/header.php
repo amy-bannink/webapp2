@@ -18,7 +18,7 @@
         <img src="../assets/img/person.png" alt="Profile" class="profile-pic hover-pointer">
     </a>
     <div class="preference-wrapper">
-    <form action="search-handler.php" method="POST" class="preference-list" id="searchForm">
+    <form action="../dbcalls/search-handler.php" method="POST" class="preference-list" id="searchForm">
             <div>
                 <label class="preference-items" where>
                     <input type="text" id="where" name="where" class="input-inline preference-top" placeholder="Where">

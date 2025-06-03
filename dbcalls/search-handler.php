@@ -1,28 +1,15 @@
 <?php
-require_once 'conn.php'; 
+session_start();
 
-$destination = $_POST['where'];
-$checkin = $_POST['check-in'];
-$checkout = $_POST['check-out'];
-$guests = (int) $_POST['who'];
-$flight = isset($_POST['flight']) ? 1 : 0;
+require_once('./conn.php');
 
-try {
-    $sql = "INSERT INTO boekingen (bestemming, checkin, checkout, gasten, vlucht) 
-            VALUES (:destination, :checkin, :checkout, :guests, :flight)";
-    
-    $stmt = $conn->prepare($sql);
+$where = '%' . $_POST['where'] . '%';
 
-    $stmt->bindParam(':destination', $destination);
-    $stmt->bindParam(':checkin', $checkin);
-    $stmt->bindParam(':checkout', $checkout);
-    $stmt->bindParam(':guests', $guests, PDO::PARAM_INT);
-    $stmt->bindParam(':flight', $flight, PDO::PARAM_INT);
+$stmt = $conn->prepare(query: "SELECT * FROM trips t join accommodations a on t.accommodation_id = a.accommodation_id left join flights f on t.flight_id = f.flight_id WHERE a.location LIKE :where;");
+$stmt->bindParam(':where', $where);
+$stmt->execute();
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmt->execute();
-
-    echo "Zoekopdracht succesvol opgeslagen.";
-} catch (PDOException $e) {
-    echo "Fout bij opslaan: " . $e->getMessage();
-}
-?>
+$_SESSION['search_results'] = $results;
+header("Location: ../searched-trips.php");
+exit;

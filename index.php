@@ -18,37 +18,31 @@
     <main class="main-home">
   <section class="home-grid">
     <?php 
-    include('./dbcalls/read.php');
-     foreach ($result as $trip){
-      echo '<div class="grid-item"> 
-            <img src="'. $trip['location_img'] . '" alt="France">
-            <div class="label">' . $trip['location'] . '</div></div>';
-         }
-    ?>
-            <!-- // <div class="grid-item">
-    //   <img src="./assets/img/france.jpg" alt="France">
-    //   <div class="label">France</div>
-    // </div>
-    // <div class="grid-item">
-    //   <img src="./assets/img/portugal.jpg" alt="Portugal">
-    //   <div class="label">Portugal</div>
-    // </div>
-    // <div class="grid-item">
-    //   <img src="./assets/img/spain.jpg" alt="Spain">
-    //   <div class="label">Spain</div>
-    // </div>
-    // <div class="grid-item">
-    //   <img src="./assets/img/france.jpg" alt="France">
-    //   <div class="label">France</div>
-    // </div>
-    // <div class="grid-item">
-    //   <img src="./assets/img/portugal.jpg" alt="Portugal">
-    //   <div class="label">Portugal</div>
-    // </div>
-    // <div class="grid-item">
-    //   <img src="./assets/img/spain.jpg" alt="Spain">
-    //   <div class="label">Spain</div>
-    // </div> -->
+    include('./dbcalls/read.php'); 
+    foreach ($result as $trip) {
+        echo '<div class="grid-item">
+                <img src="'. $trip['location_img'] . '" alt="'. $trip['location'] . '">
+                <div class="label">
+                    <strong>' . $trip['location'] . '</strong><br>';
+
+        // Bereken totaalprijs: prijs per nacht + vlucht (indien aanwezig)
+        $accommodationPrice = (float) $trip['price_per_night'];
+        $flightPrice = !empty($trip['price']) ? (float) $trip['price'] : 0;
+        $totalPrice = $accommodationPrice + $flightPrice;
+
+        echo 'Vanaf: €' . number_format($totalPrice, 0, ',', '.') . '<br>';
+
+        // Vluchtinfo of alternatief
+        if (!empty($trip['departure_airport']) && !empty($trip['arrival_airport'])) {
+            echo '✈️ ' . $trip['departure_airport'] . ' → ' . $trip['arrival_airport'];
+        } else {
+            echo '🏡 Accommodatie zonder vlucht';
+        }
+
+        echo    '</div>
+            </div>';
+    }
+ ?>
   </section>
 </main>
 

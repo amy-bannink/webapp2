@@ -255,6 +255,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
     height: auto;
+    min-height: 500px;
 }
 .home-grid {
   display: grid;
@@ -287,8 +288,11 @@ footer {
   width: 100%;
     background-color: #DCC48E;
   text-align: left;
-  padding: 25px 10px;
+  padding: 10px 10px;
   font-weight: 500;
   font-size: 1rem;
   color: #333;
 }
+
+
+
