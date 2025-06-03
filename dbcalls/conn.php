@@ -6,6 +6,11 @@ $dbname = "RouteScoutDB";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
+$username = "root";
+$password = "root";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=RouteScoutDB", $username, $password);
 
   // Error- en fetch-instellingen
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

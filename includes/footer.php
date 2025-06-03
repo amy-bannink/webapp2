@@ -3,7 +3,7 @@
         <p class="blue-text">
             © 2025 RouteScout,Inc. -
         </p>
-        <a href="./assets/Terms-of-service-Route-Scout.pdf" class="blue-text">terms.of.service.RouteScout</a>
+        <a href="./assets/Terms-of-service-Route-Scout.pdf" class="blue-text normal-hover-pointer">terms.of.service.RouteScout</a>
     </div>
     <div class="footer-icons-wrapper">
         <a href="" class="footer-icons">

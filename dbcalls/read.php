@@ -5,3 +5,7 @@ $stmt = $conn->prepare(query: "SELECT a.location, a.location_img, a.price_per_ni
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+$stmt = $conn->prepare("SELECT * FROM trips;");
+$stmt->execute();
+$result = $stmt->fetchAll();

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +10,20 @@
 </head>
 <body>
 
-    <header>
+    <header class="reviews">
         <?php
             include('./includes/header.php');
             ?>
     </header>
 
     <main>
+
     </main>
 
+    <footer>
+        <?php
+            include('./includes/footer.php');
+            ?>
+    </footer>
 </body>
 </html>

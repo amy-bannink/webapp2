@@ -1,3 +1,4 @@
+<?php session_start();?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,9 @@
 </head>
 <body>
 
-    <header>
+    <header class="index">
         <?php
+        
             include('./includes/header.php');
             ?>
     </header>
@@ -18,7 +20,8 @@
     <main class="main-home">
   <section class="home-grid">
     <?php 
-    include('./dbcalls/read.php'); 
+     include('./dbcalls/conn.php');
+    include('./dbcalls/read.php');
     foreach ($result as $trip) {
         echo '<div class="grid-item">
                 <img src="'. $trip['location_img'] . '" alt="'. $trip['location'] . '">
@@ -45,7 +48,6 @@
  ?>
   </section>
 </main>
-
 
     <footer>
         <?php
