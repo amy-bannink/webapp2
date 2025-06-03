@@ -32,16 +32,19 @@ header {
     height: 100%;
     object-fit: cover;
 }
-.index .home-button{
+.admin .admin-header{
     color:black;
 }
-.contact .contact-button{
+.index .home-header{
     color:black;
 }
-.reviews .reviews-button{
+.contact .contact-header{
     color:black;
 }
-.sign-up .sign-up-button{
+.reviews .reviews-header{
+    color:black;
+}
+.sign-up .sign-up-header{
     color:black;
 }
 .logo-wrapper {
@@ -247,15 +250,24 @@ main {
     background-color:#B3C0A4;
     width: 300px;
     border-radius: 20px;
-    height: 200px;
+    height: auto;
     padding: 20px;
 }
 .login-items{
     background-color: #EAEFD3;
     border-radius: 15px;
-    width: 300px;
+    width: auto;
     margin-bottom:10px;
     margin-top:10px;
+}
+.login-button-wrapper {
+    display:flex;
+    justify-content: space-between;
+}
+.login-button{
+    background-color: #EAEFD3;
+    border-radius: 15px;
+    width: 80px;
 }
 .login-input{
     background-color: #EAEFD3;

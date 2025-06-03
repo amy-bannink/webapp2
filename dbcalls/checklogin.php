@@ -1,7 +1,7 @@
 <?php
     include("conn.php");
-    $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = :user_id AND password = :password;");
-    $stmt->bindParam(":user_id", $_POST['user_id']);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email AND password = :password;");
+    $stmt->bindParam(":email", $_POST['email']);
     $stmt->bindParam(":password", $_POST['password']);
     $stmt->execute();
     $result = $stmt->fetch();
@@ -10,7 +10,9 @@
 
 if ($result){
     $_SESSION['user_id'] = $result['user_id'];
+    $_SESSION['role_id'] = $result['role_id'];
+    header('location: ../index.php');
 }
 else{
-    echo 'no account';
+    echo 'incorrect email or password';
 }

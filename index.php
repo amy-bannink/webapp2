@@ -1,3 +1,4 @@
+<?php session_start();?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
 
     <header class="index">
         <?php
+        
             include('./includes/header.php');
             ?>
     </header>

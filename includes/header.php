@@ -8,10 +8,20 @@
     </div>
     <nav>
         <ul>
-            <li><a href="../index.php" class="hover-pointer blue-text home-button">Home</a></li>
-            <li><a href="../contact.php" class="hover-pointer blue-text contact-button">Contact</a></li>
-            <li><a href="../reviews.php" class="hover-pointer blue-text reviews-button">Reviews</a></li>
-            <li><a href="../sign_up.php" class="hover-pointer blue-text">Sign up</a></li>
+            <?php
+            if (($_SESSION['role_id'] ?? null) === 2) {
+                echo '<li><a href="../admin.php" class="hover-pointer blue-text admin-header">Admin</a></li>';
+            }
+            ?>
+            <li><a href="../index.php" class="hover-pointer blue-text home-header">Home</a></li>
+            <li><a href="../contact.php" class="hover-pointer blue-text contact-header">Contact</a></li>
+            <li><a href="../reviews.php" class="hover-pointer blue-text reviews-header">Reviews</a></li>
+            <?php
+            if (isset($_SESSION['user_id']) ){   
+            } else {
+                echo '<li><a href="../sign_up.php" class="hover-pointer blue-text sign-up-header">Sign up</a></li>';
+            }
+            ?>
         </ul>
     </nav>
     <a href="../login.php" class="profile-icon-link">
