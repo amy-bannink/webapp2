@@ -236,17 +236,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /* header stop */
 /* main start */
-/* main {
+main {
     background-color: #EAEFD3;
     width: 100%;
-
     padding-bottom: 60px;
-} */
-
-
-
     height: 600px;
     padding-top: 50px;
+}
+.login-input-inline {
+  border: none;
+  background-color: #DCC48E;
+  font-size: inherit;
+  font-family: inherit;
+  width: auto;
+}
+.login-input-inline:focus {
+  outline: none;
+}
+.login-input-inline::placeholder {
+  color: #000000;
 }
 .login-wrapper {
     display: flex;

@@ -2,7 +2,7 @@
     <div class="logo-wrapper">
         <div class="logo"></div>
         <div class="slogan-wrapper">
-                <h1 class="blue-text slogan-big">Find your next stay</h1>
+            <h1 class="blue-text slogan-big">Find your next stay</h1>
                     <p class="blue-text slogan-small">Scout the way. Embrace the journey.</p>
         </div>
     </div>
@@ -68,6 +68,4 @@
         </form>`
     </div>
     <script src="../assets/js/search-form.js"></script>
-
-    <!-- <script src="./assets/js/*"></script> -->
 </header>
