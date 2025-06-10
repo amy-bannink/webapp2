@@ -18,11 +18,7 @@
 
 
     <main>
-        <div class="login-wrapper">
-            <div class="login-box">
-
-            </div>
-        </div>
+        
     </main>
 
     <footer>

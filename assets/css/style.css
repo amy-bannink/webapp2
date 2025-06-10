@@ -19,7 +19,8 @@ header {
     position: relative;
     background-color: #B3C0A4;
     width: 100%;
-    height: 450px;
+    height: auto;
+    padding-bottom:20px;
 }
 .profile-icon-link {
   position: absolute;
@@ -195,7 +196,7 @@ input[type=number]::-webkit-outer-spin-button {
         width: 120px;
     }
     header{
-        height:auto;
+        padding: 0;
     }
     .slogan-big {
     margin-top:14%;
@@ -331,21 +332,21 @@ footer {
     min-height: 500px;
 }
 .home-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-  padding: 60px;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    padding: 60px;
+    justify-items: center;
 }
-
+ 
 .grid-item {
-  position: relative;
-  width: 400px;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .grid-item img {

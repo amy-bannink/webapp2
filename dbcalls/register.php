@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, role_id) VALUES (?, ?, ?, ?)");
-    if ($stmt->execute([$full_name, $email, $password, 2])) {
+    if ($stmt->execute([$full_name, $email, $password, 1])) {
         $user_id = $conn->lastInsertId();
 
         $_SESSION['user_id'] = $user_id;
