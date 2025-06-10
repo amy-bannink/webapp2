@@ -24,9 +24,9 @@
     include('./dbcalls/read.php');
     foreach ($result as $trip) {
         echo '<div class="grid-item">
-                <img src="'. $trip['location_img'] . '" alt="'. $trip['location'] . '">
+                <img src="'. $trip['location_img'] . '" alt="'. $trip['city_name'] . '">
                 <div class="label">
-                    <strong>' . $trip['location'] . '</strong><br>';
+                    <strong>' . $trip['city_name'] . '</strong><br>';
 
         // Bereken totaalprijs: prijs per nacht + vlucht (indien aanwezig)
         $accommodationPrice = (float) $trip['price_per_night'];

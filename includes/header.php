@@ -65,9 +65,7 @@
                 Flight
             </label>
             <button type="submit" class="search preference-items preference-bottom hover-pointer">Search</button>
-        </form>`
+        </form>
     </div>
     <script src="../assets/js/search-form.js"></script>
-
-    <!-- <script src="./assets/js/*"></script> -->
 </header>
