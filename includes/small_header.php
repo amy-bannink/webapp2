@@ -15,9 +15,10 @@
             ?>
             <li><a href="../index.php" class="hover-pointer blue-text">Home</a></li>
             <li><a href="../contact.php" class="hover-pointer blue-text">Contact</a></li>
+            <li><a href="../about-us.php" class="hover-pointer blue-text">About Us</a></li>
             <li><a href="../reviews.php" class="hover-pointer blue-text">Reviews</a></li>
             <?php
-            if (isset($_SESSION['user_id']) ){   
+            if (isset($_SESSION['user_id'])) {
             } else {
                 echo '<li><a href="../sign_up.php" class="hover-pointer blue-text sign-up-header">Sign up</a></li>';
             }

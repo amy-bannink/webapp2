@@ -26,7 +26,7 @@
         echo '<div class="grid-item">
                 <img src="'. $trip['location_img'] . '" alt="'. $trip['city_name'] . '">
                 <div class="label">
-                    <strong>' . $trip['city_name'] . '</strong><br>';
+                    <strong>' . $trip['trip_name'] . '</strong><br>';
 
         // Bereken totaalprijs: prijs per nacht + vlucht (indien aanwezig)
         $accommodationPrice = (float) $trip['price_per_night'];

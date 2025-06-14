@@ -15,6 +15,7 @@
             ?>
             <li><a href="../index.php" class="hover-pointer blue-text home-header">Home</a></li>
             <li><a href="../contact.php" class="hover-pointer blue-text contact-header">Contact</a></li>
+            <li><a href="../about-us.php" class="hover-pointer blue-text about-us-header">About Us</a></li>
             <li><a href="../reviews.php" class="hover-pointer blue-text reviews-header">Reviews</a></li>
             <?php
             if (isset($_SESSION['user_id']) ){   
