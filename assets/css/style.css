@@ -244,6 +244,10 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
+.about-us-div h1, .about-us-div p{
+    margin: 30px;
+}
+
 /* contact pagina */
 .contact-div p,
 .contact-div h1 {
