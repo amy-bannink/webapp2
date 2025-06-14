@@ -5,6 +5,15 @@
     cursor: default;
 }
 
+.flex-c{
+    display: flex;
+    flex-direction: column;
+}
+.flex-r{
+    display: flex;
+    flex-direction: row;
+}
+
 .hover-pointer:hover {
     cursor: pointer;
     color: #27233A;
@@ -235,7 +244,9 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
-.contact-div p {
+/* contact pagina */
+.contact-div p,
+.contact-div h1 {
     margin: 30px;
 }
 
@@ -259,8 +270,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px;
 }
 
 .contact-form-input {
@@ -362,6 +372,17 @@ input[type=number]::-webkit-outer-spin-button {
         height: auto;
     }
 
+    .contact-main{
+        flex-direction: row;
+        gap: 80px;
+        align-items: flex-start;
+    }
+    
+    .contact-form-area, .contact-div{
+        width: 30vw;
+        margin-top: 0;
+    }
+
 
 }
 
@@ -455,16 +476,16 @@ footer {
 
 
 /* home pagina start */
- .main-home {
+.main-home {
     background-color: #EAEFD3;
     width: 100%;
     box-sizing: border-box;
     height: auto;
     min-height: 500px;
-} 
+}
 
 
- .home-grid {
+.home-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -473,14 +494,14 @@ footer {
 }
 
 .grid-item {
-    flex: 1 1 350px; 
+    flex: 1 1 350px;
     max-width: 350px;
-    min-width: 250px; 
+    min-width: 250px;
     position: relative;
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-} 
+}
 
 
 .grid-item img {

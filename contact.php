@@ -20,8 +20,9 @@
 
     <main class="contact-main">
         <div class="contact-div">
-            <h1>Contact Us – RouteScout</h1>
-            <p>Scout the way. Embrace the journey.</p>
+                <h1>Contact Us – RouteScout</h1>
+                <p>Scout the way. Embrace the journey.</p>
+
 
             <P>Have a question about your next trip? Want to know more about our travel packages? We're here to help!
                 <br>
