@@ -13,7 +13,8 @@
                 echo '<li><a href="../admin.php" class="hover-pointer blue-text admin-header">Admin</a></li>';
             }
             ?>
-            <li><a href="../index.php" class="hover-pointer blue-text">Home</a></li>
+            <li><a href="../index.php" class="hover-pointer blue-text">Trips</a></li>
+            <li><a href="../locations.php" class="hover-pointer blue-text">Locations</a></li>
             <li><a href="../contact.php" class="hover-pointer blue-text">Contact</a></li>
             <li><a href="../about-us.php" class="hover-pointer blue-text">About Us</a></li>
             <li><a href="../reviews.php" class="hover-pointer blue-text">Reviews</a></li>

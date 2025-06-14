@@ -5,11 +5,12 @@
     cursor: default;
 }
 
-.flex-c{
+.flex-c {
     display: flex;
     flex-direction: column;
 }
-.flex-r{
+
+.flex-r {
     display: flex;
     flex-direction: row;
 }
@@ -69,6 +70,10 @@ header {
 }
 
 .about-us .about-us-header {
+    color: black;
+}
+
+.locations .locations-header {
     color: black;
 }
 
@@ -232,7 +237,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .about-us-div,
-.contact-div {
+.contact-div,
+.intro-section-locations {
     width: 60vw;
     background-color: #B3C0A4;
     height: auto;
@@ -244,7 +250,8 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
-.about-us-div h1, .about-us-div p{
+.about-us-div h1,
+.about-us-div p {
     margin: 30px;
 }
 
@@ -297,7 +304,49 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+/* locations pagina */
+.intro-section-locations {
+    width: 70vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 
+}
+
+.title,
+.text {
+    margin: 20px;
+}
+
+.text {
+    margin-top: 15px;
+}
+
+.search-locations-input,
+.search-locations-button {
+    padding: 20px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    width: 54vw;
+    background-color: #DCC48E;
+    border: none;
+    margin-top: 10px;
+}
+
+.search-locations-button {
+    width: 14vw;
+}
+
+/* location-details pagina */
+.grid-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;         
+}
+
+.location-details-img{
+    width: 40vw;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
 
 @media screen and (min-width: 803px) {
     .preference-list {
@@ -376,13 +425,14 @@ input[type=number]::-webkit-outer-spin-button {
         height: auto;
     }
 
-    .contact-main{
+    .contact-main {
         flex-direction: row;
         gap: 80px;
         align-items: flex-start;
     }
-    
-    .contact-form-area, .contact-div{
+
+    .contact-form-area,
+    .contact-div {
         width: 30vw;
         margin-top: 0;
     }
@@ -480,16 +530,22 @@ footer {
 
 
 /* home pagina start */
-.main-home {
+.main-home,
+.main-locations,
+.main-location-details {
     background-color: #EAEFD3;
     width: 100%;
     box-sizing: border-box;
     height: auto;
     min-height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 
-.home-grid {
+.home-grid,
+.locations-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -505,8 +561,13 @@ footer {
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.grid-link:hover .grid-item {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
 
 .grid-item img {
     width: 100%;

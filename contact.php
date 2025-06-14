@@ -20,8 +20,8 @@
 
     <main class="contact-main">
         <div class="contact-div">
-                <h1>Contact Us – RouteScout</h1>
-                <p>Scout the way. Embrace the journey.</p>
+            <h1>Contact Us</h1>
+            <p>Scout the way. Embrace the journey.</p>
 
 
             <P>Have a question about your next trip? Want to know more about our travel packages? We're here to help!
@@ -34,10 +34,10 @@
             <div class="contact-form-area">
                 <h1>Send Us A Message</h1>
                 <form class="contact-form" action="./dbcalls/send-contact-form.php" method="post">
-                    <input class="contact-form-input" type="text" name="first_name" placeholder="Voornaam" required>
-                    <input class="contact-form-input" type="text" name="last_name" placeholder="Achternaam" required>
-                    <input class="contact-form-input" type="email" name="email" placeholder="E-mailadres" required>
-                    <textarea class="contact-form-input" name="message" rows="13" cols="50" placeholder="Uw bericht:"
+                    <input class="contact-form-input" type="text" name="first_name" placeholder="First name" required>
+                    <input class="contact-form-input" type="text" name="last_name" placeholder="Surname" required>
+                    <input class="contact-form-input" type="email" name="email" placeholder="Email address" required>
+                    <textarea class="contact-form-input" name="message" rows="13" cols="50" placeholder="Your message"
                         required></textarea>
                     <button type="submit" value="Submit" class="submit-button">Verstuur</button>
                 </form>

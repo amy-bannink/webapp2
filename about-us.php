@@ -22,24 +22,23 @@
         <div class="about-us-div">
             <h1>About Us</h1>
             <br>
-            <P>Welkom bij Route Scout, uw betrouwbare partner voor onvergetelijke reizen. Met jarenlange ervaring in
-                de reisbranche zetten wij ons dagelijks in om voor u de beste vakanties en reiservaringen samen te
-                stellen.
-            <br>
-            <br>
-                Onze missie is helder: wij willen reizen toegankelijk maken, met persoonlijke service en oog voor
-                kwaliteit. Of u nu droomt van een avontuurlijke rondreis, een ontspannen strandvakantie of een culturele
-                stedentrip, wij denken graag met u mee en zorgen voor een zorgeloze voorbereiding.
-            <br>
-            <br>
-                Bij Route Scout staan betrouwbaarheid, klanttevredenheid en duurzaamheid centraal. We werken alleen
-                met zorgvuldig geselecteerde partners en zorgen dat uw reis tot in de puntjes geregeld is. Ons team van
-                ervaren reisexperts staat altijd voor u klaar om u te adviseren en te ondersteunen.
-            <br>
-            <br>
-                Kies voor Route Scout en ervaar het gemak en de zekerheid van reizen met een partner die écht met u
-                meedenkt. Wij kijken ernaar uit om samen met u de perfecte reis te plannen!</P>
-
+            <P>Welcome to Route Scout, your trusted partner for unforgettable journeys. With years of experience in the
+                travel industry, we are dedicated every day to crafting the best vacations and travel experiences for
+                you.
+                <br>
+                <br>
+                Our mission is clear: to make travel accessible with personalized service and a keen eye for quality.
+                Whether you dream of an adventurous tour, a relaxing beach holiday, or a cultural city break, we are
+                happy to assist you and ensure a hassle-free preparation.
+                <br>
+                <br>
+                At Route Scout, reliability, customer satisfaction, and sustainability are at the heart of everything we
+                do. We work exclusively with carefully selected partners to ensure your trip is perfectly arranged. Our
+                team of experienced travel experts is always ready to advise and support you.
+                <br>
+                <br>
+                Choose Route Scout and experience the ease and confidence of traveling with a partner who truly thinks
+                along with you. We look forward to planning the perfect trip together!
         </div>
     </main>
 

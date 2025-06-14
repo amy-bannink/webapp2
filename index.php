@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Index</title>
+    <title>Home</title>
 </head>
 <body>
 
