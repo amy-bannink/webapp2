@@ -297,7 +297,15 @@ main {
     color:#000000;
     font-size: 17px;
 }
-
+.create-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction:row;
+    align-items: flex-start;
+}
+.create-title {
+    font-size: 20px;
+}
 /* main stop */
 /* footer start */
 footer {
