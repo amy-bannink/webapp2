@@ -9,19 +9,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $confirm_password = $_POST["confirm_password"] ?? '';
 
     if (empty($full_name) || empty($email) || empty($password) || empty($confirm_password)) {
-        die("All fields are required.");
+        $_SESSION['error'] = "All fields are required.";
+        header("Location: /sign-up.php");
+        exit;
     }
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format.");
+        $_SESSION['error'] = "Invalid email format.";
+        header("Location: /sign-up.php");
+        exit;
     }
+
     if ($password !== $confirm_password) {
-        die("Passwords do not match.");
+        $_SESSION['error'] = "Passwords do not match.";
+        header("Location: /sign-up.php");
+        exit;
     }
 
     $stmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
     $stmt->execute([$email]);
     if ($stmt->fetch()) {
-        die("Email is already registered.");
+        $_SESSION['error'] = "Email is already registered.";
+        header("Location: /sign-up.php");
+        exit;
     }
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, role_id) VALUES (?, ?, ?, ?)");
@@ -32,13 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['name'] = $full_name;
         $_SESSION['email'] = $email;
 
-        header("Location: ../dashboard.php");
+        header("Location: /index.php");
         exit;
     } else {
-        die("Something went wrong. Please try again.");
+        $_SESSION['error'] = "Something went wrong. Please try again.";
+        header("Location: /sign-up.php");
+        exit;
     }
 } else {
-    die("Invalid request.");
+    $_SESSION['error'] = "Invalid request.";
+    header("Location: /sign-up.php");
+    exit;
 }
-
-

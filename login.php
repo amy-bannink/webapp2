@@ -44,7 +44,7 @@ session_start();
                     <div class="login-button-wrapper">
                         <div>
                             <p>I don't have an account yet.</p>
-                            <a href="../sign_up.php" class="hover-pointer redirect-login-sign_up">go to sign up</a>
+                            <a href="../sign-up.php" class="hover-pointer redirect-login-sign_up">go to sign up</a>
                         </div>
                         <label class="login-button hover-pointer">
                             <input type="submit" value="Log in" class="input-inline login-input">
