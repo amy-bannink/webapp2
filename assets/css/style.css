@@ -207,7 +207,6 @@ input[type=number]::-webkit-outer-spin-button {
         font-size:55%;
         font-weight:normal;
     }
-   
 }
 @media screen and (min-width: 1050px){
     li a {
@@ -236,14 +235,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /* header stop */
 /* main start */
-/* main {
+ main {
     background-color: #EAEFD3;
     width: 100%;
 
     padding-bottom: 60px;
-} */
-
-
 
     height: 600px;
     padding-top: 50px;
