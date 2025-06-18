@@ -22,6 +22,7 @@
     <?php
      include('./dbcalls/conn.php');
     include('./dbcalls/read.php');
+
     foreach ($result as $trip) {
         echo '<div class="grid-item">
                 <img src="'. $trip['location_img'] . '" alt="'. $trip['city_name'] . '">
