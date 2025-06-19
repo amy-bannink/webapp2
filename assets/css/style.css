@@ -335,7 +335,7 @@ main {
     width: 100%;
     padding-bottom: 60px;
     height: auto;
-    min-height: 600px;
+    min-height: 630px;
     padding-top: 50px;
 }
 
@@ -424,7 +424,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
     height: auto;
-    min-height: 500px;
+    /* min-height: 630px; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -602,7 +602,8 @@ footer {
 
 .acc,
 .fli,
-.loc {
+.loc,
+.btn {
     /* flex: 1 1 500px;
     min-width: 400px;
     max-width: 500px; */
@@ -615,7 +616,7 @@ footer {
 }
 .trip-title{
     padding: 6px;
-    background-color: #DCC48E;
+    background-color: #B3C0A4;
     border-radius: 6px;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -624,6 +625,8 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .trip-main {
@@ -639,4 +642,17 @@ width: 350px;
         border-radius: 6px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 2%;
+    height: 50px;
+
+}
+
+.trip-button{
+  margin-right: 30px;
 }

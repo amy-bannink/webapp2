@@ -19,7 +19,7 @@ session_start();
 
     <header>
         <?php
-        include('./includes/small_header.php');
+        include('./includes/small-header.php');
         ?>
     </header>
 

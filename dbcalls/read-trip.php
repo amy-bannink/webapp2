@@ -1,6 +1,5 @@
 <?php
 require_once('conn.php');
-$trip_id = $_GET['trip_id'] ?? null;
 $result = null;
 
 if ($trip_id) {
@@ -12,6 +11,6 @@ SELECT l.*, t.*, a.*, f.* FROM trips t join accommodations a on t.accommodation_
     ");
 
     $stmt->execute(['trip_id' => $trip_id]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC); // Slechts 1 resultaat ophalen
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?>

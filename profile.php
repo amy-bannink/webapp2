@@ -25,7 +25,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <body>
  
     <header class="profile">
-        <?php include('./includes/small_header.php'); ?>
+        <?php include('./includes/small-header.php'); ?>
     </header>
  
     <main>

@@ -1,7 +1,14 @@
-<?php session_start(); ?>
 <?php
+session_start();
+
+if (!isset($_GET['id'])) {
+    die('Geen trip ID opgegeven.');
+}
+
+$trip_id = $_GET['id'];
 include('./dbcalls/read-trip.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,10 +30,10 @@ include('./dbcalls/read-trip.php');
 
     <main class="trip-main">
         <?php
-        echo '<section class="trip-title">' .
+        echo '<div class="trip-title">' .
             '<h1> ' . $result['trip_name'] . '</h1>' .
             '<p>' . $result['trip_description'] . '</p>' .
-            '</section>' .
+            '</div>' .
             '<section class="acc">' .
             '<h2>Accommodation Details</h2>' .
             '<h3>' . $result['name'] . '</h3>' .
@@ -56,10 +63,20 @@ include('./dbcalls/read-trip.php');
             '<img src="' . $result['location_img'] . '" class="trip-img"</img>' .
             '</section>'
         ;
-
-
-
         ?>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <section class="btn">
+
+                <form action="book-trip.php" method="POST">
+                    <input type="hidden" name="trip_id" value="<?php echo $trip_id; ?>">
+                    <button type="submit" class="trip-button">Book this trip</button>
+                </form>
+        </section>
+
+        <?php else: ?>
+            <p> <a href="login.php">Log in</a> to book this trip.</p>
+        <?php endif; ?>
+
     </main>
 
 
