@@ -312,17 +312,8 @@ input[type=number]::-webkit-outer-spin-button {
         height: auto;
     }
 
-    .contact-main {
-        flex-direction: row;
-        gap: 80px;
-        align-items: flex-start;
-    }
 
-    .contact-form-area,
-    .contact-div {
-        width: 30vw;
-        margin-top: 0;
-    }
+
 
 
 }
@@ -482,8 +473,6 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 10%;
-    padding-bottom: 10%;
 }
 
 .about-us-div,
@@ -516,8 +505,6 @@ footer {
     background-color: #B3C0A4;
     height: auto;
     border-radius: 6px;
-    margin-top: 40px;
-    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -552,6 +539,20 @@ footer {
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 
+}
+
+.contact-main {
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form-area,
+.contact-div {
+    width: 450px;
+    margin-top: 50px;
 }
 
 /* locations pagina */
@@ -604,9 +605,6 @@ footer {
 .fli,
 .loc,
 .btn {
-    /* flex: 1 1 500px;
-    min-width: 400px;
-    max-width: 500px; */
     width: 75%;
     padding: 6px;
     background-color: #DCC48E;
@@ -614,7 +612,8 @@ footer {
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
-.trip-title{
+
+.trip-title {
     padding: 6px;
     background-color: #B3C0A4;
     border-radius: 6px;
@@ -630,21 +629,21 @@ footer {
 }
 
 .trip-main {
-        display: flex;
-        justify-content: center;
-            flex-wrap: wrap;
-gap: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 
 }
 
 .trip-img {
-width: 350px;
-        border-radius: 6px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    width: 350px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 
 }
 
-.btn{
+.btn {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -653,6 +652,6 @@ width: 350px;
 
 }
 
-.trip-button{
-  margin-right: 30px;
+.trip-button {
+    margin-right: 30px;
 }
