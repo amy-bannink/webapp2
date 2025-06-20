@@ -27,7 +27,7 @@ $locations = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <header class="admin">
         <?php
-        include('./includes/small_header.php');
+        include('./includes/small-header.php');
         ?>
     </header>
 

@@ -22,7 +22,7 @@ if (isset($_SESSION['user_id'])) {
 
     <header>
         <?php
-        include('./includes/small_header.php');
+        include('./includes/small-header.php');
         ?>
     </header>
 
@@ -55,6 +55,7 @@ if (isset($_SESSION['user_id'])) {
                         <div>
                             <br><a href="../forgot_password.php" class="hover-pointer redirect-login-sign_up">I forgot
                                 my password</a>
+
                         </div>
                         <label class="login-button hover-pointer">
                             <input type="submit" value="Log in" class="input-inline login-input">
