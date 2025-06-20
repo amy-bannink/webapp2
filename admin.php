@@ -1,17 +1,15 @@
 <?php session_start();
+
 include('./dbcalls/conn.php');
 
-// Fetch all trips
-$stmt = $conn->query("SELECT * FROM trips");
-$trips = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Fetch all accomodations
 $acc_stmt = $conn->query("SELECT accommodation_id, name FROM accommodations");
 $accommodations = $acc_stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Fetch all flights
-$fli_stmt = $conn->query("SELECT flight_id, airline FROM flights");
+$fli_stmt = $conn->query("SELECT flight_id, departure_airport, arrival_airport FROM flights");
 $flights = $fli_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$loc_stmt = $conn->query("SELECT country_id, city_name, country_name FROM locations");
+$locations = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -36,162 +34,160 @@ $flights = $fli_stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <div class="create-wrapper">
+            <div class="wide-login-box">
+                <form action="../dbcalls/create_trip.php" method="post" enctype="multipart/form-data">
+                    <div class="create-wrapper">
+                        <div class="login">
+
+                            <h2>Create Accomodation</h2>
+
+                            <p>create an accomodation name.</p>
+                            <label class="login-items">
+                                <input type="text" name="accomodation_name" placeholder="e.g. Beach Resort Barcelona"
+                                    required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            </label><br>
+
+                            <p>choose a location.</p>
+                            <label class="login-items">
+                                <select name="country_id" required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                                    <option value="">empty</option>
+                                    <?php foreach ($locations as $loc): ?>
+                                        <option value="<?= $loc['country_id'] ?>">
+                                            <?= htmlspecialchars($loc['city_name'] . " in " . $loc['country_name']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </label><br>
+
+                            <p>upload an image.</p>
+                            <div class="img-wrapper login-items">
+                                <button class="login-input-inline login-input normal-hover-pointer grey-text">upload
+                                    image</button>
+                                <input type="file" name="image" accept="image/*" required>
+                            </div><br>
+
+                            <p>create a description.</p>
+                            <label class="login-items">
+                                <input type="text" name="description"
+                                    placeholder="e.g. Luxury resort close to the beach." required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            </label><br>
+
+                            <p>set a price per night.</p>
+                            <label class="login-items">
+                                <input type="number" name="price_per_night" placeholder="e.g. 110.00" required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            </label><br>
+
+                            <p>set a maximum amount of guest.</p>
+                            <label class="login-items">
+                                <input type="number" name="max_guests" placeholder="e.g. 4" required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            </label><br>
+
+                        </div>
+                        <div class="login">
+
+                            <h2>Create Trip</h2>
+
+                            <p>create a trip name.</p>
+                            <label class="login-items">
+                                <input type="text" name="trip_name" placeholder="e.g. Sunny Barcelona" required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            </label><br>
+
+                            <p>create a trip description.</p>
+                            <label class="login-items">
+                                <input type="text" name="description" placeholder="e.g. Enjoy the sun and sea in Spain."
+                                    required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            </label><br>
+
+                            <p>choose a flight.</p>
+                            <label class="login-items">
+                                <select name="flights" required
+                                    class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                                    <option value="">empty</option>
+                                    <?php foreach ($flights as $fli): ?>
+                                        <option value="<?= $fli['flight_id'] ?>">
+                                            <?= htmlspecialchars($fli['departure_airport'] . ' to ' . $fli['arrival_airport']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </label><br>
+
+                            <label class="login-button hover-pointer">
+                                <input type="submit" value="create" class="input-inline login-input">
+                            </label><br>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             <div class="login-box">
-                <h1 class="create-title">Create Trip</h1>
-                <form action="./dbcalls/create_trip.php" method="post" class="login">
+                <h2>Create Flight</h2>
 
-                    <p>Trip name:</p>
-                    <label class="login-items">
-                        <input type="text" name="trip_name" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
+                <form action="../dbcalls/create_flight.php" method="post" class="login">
 
-                    <p>Description:</p>
+                    <p>create an airline.</p>
                     <label class="login-items">
-                        <input type="text" name="description" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
+                        <input type="text" name="airline" placeholder="e.g. Lufthansa" required
+                            class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                    </label><br>
 
-                    <p>Choose flight:</p>
+                    <p>choose a departure airport.</p>
                     <label class="login-items">
-                        <select name="flight_id" id="" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                            <option value="">-- Choose --</option>
-                            <?php foreach ($flights as $fli): ?>
-                                <option value="<?= $fli['flight_id'] ?>">
-                                    <?= htmlspecialchars($fli['airline']) ?>
+                        <select name="departure_airport" required
+                            class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            <option value="">empty</option>
+                            <?php foreach ($locations as $loc): ?>
+                                <option value="<?= $loc['country_id'] ?>">
+                                    <?= htmlspecialchars($loc['city_name'] . " in " . $loc['country_name']) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </label>
+                    </label><br>
 
-                    <p>Choose accomodation:</p>
+                    <p>choose an arrival airport.</p>
                     <label class="login-items">
-                        <select name="accomodation_id" id="" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                            <option value="">-- Choose --</option>
-                            <?php foreach ($accommodations as $acc): ?>
-                                <option value="<?= $acc['accommodation_id'] ?>">
-                                    <?= htmlspecialchars($acc['name']) ?>
+                        <select name="arrival_airport" required
+                            class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                            <option value="">empty</option>
+                            <?php foreach ($locations as $loc): ?>
+                                <option value="<?= $loc['country_id'] ?>">
+                                    <?= htmlspecialchars($loc['city_name'] . " in " . $loc['country_name']) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </label>
+                    </label><br>
+
+                    <p>choose a departure date.</p>
+                    <label class="login-items">
+                        <input type="datetime-local" name="departure_date" placeholder="empty" required
+                            class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                    </label><br>
+
+                    <p>choose an arrival date.</p>
+                    <label class="login-items">
+                        <input type="datetime-local" name="arrival_date" placeholder="empty" required
+                            class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                    </label><br>
+
+                    <p>set a price.</p>
+                    <label class="login-items">
+                        <input type="number" name="price" placeholder="e.g. 150.00" required
+                            class="login-input-inline login-input normal-hover-pointer grey-placeholder">
+                    </label><br>
 
                     <label class="login-button hover-pointer">
-                        <input type="submit" value="Create" class="input-inline login-input">
-                    </label>
-                </form>
-            </div>
-            <div class="login-box">
-                <h1 class="create-title">Create Flight</h1>
-                <form action="./dbcalls/create_flight.php" method="post" class="login">
-
-                    <p>Airline:</p>
-                    <label class="login-items">
-                        <input type="text" name="airline" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Departure airport:</p>
-                    <label class="login-items">
-                        <input type="text" name="departure_airport" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Arrival airport:</p>
-                    <label class="login-items">
-                        <input type="text" name="arrival_airport" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Departure date:</p>
-                    <label class="login-items">
-                        <input type="date" name="departure_date" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Arrival date:</p>
-                    <label class="login-items">
-                        <input type="date" name="arrival_date" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Price:</p>
-                    <label class="login-items">
-                        <input type="number" name="price" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <label class="login-button hover-pointer">
-                        <input type="submit" value="Create" class="input-inline login-input">
-                    </label>
-                </form>
-            </div>
-            <div class="login-box">
-                <h1 class="create-title">Create Accomodation</h1>
-                <form action="./dbcalls/create_accomodation.php" method="post" class="login">
-
-                    <p>Accomodation name:</p>
-                    <label class="login-items">
-                        <input type="text" name="accommodation_id" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Country:</p>
-                    <label class="login-items">
-                        <input type="text" name="country_id" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Description:</p>
-                    <label class="login-items">
-                        <input type="text" name="discription" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Price per night:</p>
-                    <label class="login-items">
-                        <input type="number" name="price_per_night" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <p>Max guests:</p>
-                    <label class="login-items">
-                        <input type="number" name="max_guests" required
-                            class="login-input-inline login-input normal-hover-pointer">
-                    </label>
-
-                    <label class="login-button hover-pointer">
-                        <input type="submit" value="Create" class="input-inline login-input">
-                    </label>
+                        <input type="submit" value="create" class="input-inline login-input">
+                    </label><br>
                 </form>
             </div>
         </div>
-
-        <!-- <hr>
-        <h1>Existing Trips</h1>
-        <?php foreach ($trips as $trip): ?>
-            <div class="trip-item">
-                <form action="./dbcalls/update_trip.php" method="post">
-                    <input type="hidden" name="trip_id" value="<?= $trip['trip_id'] ?>">
-
-                    <label>Accommodation ID:</label>
-                    <input type="text" name="accommodation_id" value="<?= $trip['accommodation_id'] ?>">
-
-                    <label>Flight ID:</label>
-                    <input type="text" name="flight_id" value="<?= $trip['flight_id'] ?>">
-
-                    <button type="submit">Update</button>
-                </form>
-
-                <form action="./dbcalls/delete_trip.php" method="post" style="margin-top: 5px;">
-                    <input type="hidden" name="trip_id" value="<?= $trip['trip_id'] ?>">
-                    <input type="submit" value="Delete" style="color: red;">
-                </form>
-            </div>
-            <hr>
-        <?php endforeach; ?> -->
     </main>
 
     <footer>
