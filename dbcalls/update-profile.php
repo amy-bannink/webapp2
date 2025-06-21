@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../dbcalls/conn.php'); // pad klopt als dit bestand in /dbcalls staat
+include('conn.php'); 
 
 $user_id = $_SESSION['user_id'];
 $success = $error = '';
@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit;
         }
     }
-    // Als er fout is, terugsturen met foutmelding
     header("Location: ../profile.php?error=" . urlencode($error));
     exit;
 }

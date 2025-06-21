@@ -5,7 +5,7 @@ include("./conn.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect form input
     $accommodation_name = $_POST['accomodation_name'];
-    $country_id = $_POST['country_id'];
+    $location_id = $_POST['location_id'];
     $description_acc = $_POST['description'];
     $price_per_night = $_POST['price_per_night'];
     $max_guests = $_POST['max_guests'];
@@ -46,13 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert accommodation
         $stmt = $conn->prepare("
             INSERT INTO accommodations 
-            (name, country_id, image, description, price_per_night, max_guests) 
+            (name, location_id, image, description, price_per_night, max_guests) 
             VALUES 
-            (:name, :country_id, :image, :description, :price_per_night, :max_guests)
+            (:name, :location_id, :image, :description, :price_per_night, :max_guests)
         ");
 
         $stmt->bindParam(':name', $accommodation_name);
-        $stmt->bindParam(':country_id', $country_id);
+        $stmt->bindParam(':location_id', $location_id);
         $stmt->bindParam(':image', $imagePath);
         $stmt->bindParam(':description', $description_acc);
         $stmt->bindParam(':price_per_night', $price_per_night);

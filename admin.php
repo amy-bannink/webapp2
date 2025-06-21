@@ -1,15 +1,6 @@
 <?php session_start();
 
-include('./dbcalls/conn.php');
-
-$acc_stmt = $conn->query("SELECT accommodation_id, name FROM accommodations");
-$accommodations = $acc_stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$fli_stmt = $conn->query("SELECT flight_id, departure_airport, arrival_airport FROM flights");
-$flights = $fli_stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$loc_stmt = $conn->query("SELECT country_id, city_name, country_name FROM locations");
-$locations = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
+include('./dbcalls/read-admin.php');
 ?>
 
 <!DOCTYPE html>
@@ -50,11 +41,11 @@ $locations = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
 
                             <p>choose a location.</p>
                             <label class="login-items">
-                                <select name="country_id" required
+                                <select name="location_id" required
                                     class="login-input-inline login-input normal-hover-pointer grey-placeholder">
                                     <option value="">empty</option>
                                     <?php foreach ($locations as $loc): ?>
-                                        <option value="<?= $loc['country_id'] ?>">
+                                        <option value="<?= $loc['location_id'] ?>">
                                             <?= htmlspecialchars($loc['city_name'] . " in " . $loc['country_name']) ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -144,7 +135,7 @@ $locations = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
                             class="login-input-inline login-input normal-hover-pointer grey-placeholder">
                             <option value="">empty</option>
                             <?php foreach ($locations as $loc): ?>
-                                <option value="<?= $loc['country_id'] ?>">
+                                <option value="<?= $loc['location_id'] ?>">
                                     <?= htmlspecialchars($loc['city_name'] . " in " . $loc['country_name']) ?>
                                 </option>
                             <?php endforeach; ?>
@@ -157,7 +148,7 @@ $locations = $loc_stmt->fetchAll(PDO::FETCH_ASSOC);
                             class="login-input-inline login-input normal-hover-pointer grey-placeholder">
                             <option value="">empty</option>
                             <?php foreach ($locations as $loc): ?>
-                                <option value="<?= $loc['country_id'] ?>">
+                                <option value="<?= $loc['location_id'] ?>">
                                     <?= htmlspecialchars($loc['city_name'] . " in " . $loc['country_name']) ?>
                                 </option>
                             <?php endforeach; ?>
