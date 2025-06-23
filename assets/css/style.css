@@ -268,17 +268,20 @@ main {
 .login-box {
     background-color: #B3C0A4;
     width: 300px;
-    border-radius: 20px;
+    border-radius: 6px;
     height: auto;
     padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .wide-login-box {
     background-color: #B3C0A4;
     width: 300px;
-    border-radius: 20px;
+    border-radius: 6px;
     height: auto;
     padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .login-items {
@@ -657,8 +660,8 @@ footer {
     border-radius: 6px;
     margin-top: 10px;
     width: 250px;
-        background-color: #EAEFD3;
-        
+    background-color: #EAEFD3;
+
 }
 
 .admin-received-message {
@@ -671,14 +674,17 @@ footer {
     box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.4);
 }
 
-.delete-message-btn, .send-reply-btn, .mark-read-btn {
+.delete-message-btn,
+.send-reply-btn,
+.mark-read-btn {
     background-color: #505168;
     padding: 5px 10px;
     border-radius: 6px;
     border: none;
     width: 273px;
 }
-.delete-message-btn{
+
+.delete-message-btn {
     margin-top: 10px;
 }
 
@@ -686,7 +692,8 @@ footer {
     background-color: red;
 }
 
-.send-reply-btn:hover, .mark-read-btn:hover{
+.send-reply-btn:hover,
+.mark-read-btn:hover {
     background-color: #27233A;
     color: white;
 }
@@ -697,11 +704,13 @@ footer {
     padding: 7px;
     width: 95%;
 }
-.send-reply-btn, .mark-read-btn{
-    background-color:#EAEFD3 ;
+
+.send-reply-btn,
+.mark-read-btn {
+    background-color: #EAEFD3;
 }
 
-.nav-buttons{
+.nav-buttons {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
@@ -709,16 +718,40 @@ footer {
     margin-right: 15px; */
 }
 
-.nav-buttons a{
+.nav-buttons a {
     color: black;
-border-radius: 6px;
+    border-radius: 6px;
     padding: 5px;
 }
 
-.nav-buttons a:hover{
+.nav-buttons a:hover {
     background-color: #EAEFD3;
-    
+
 }
+
+.admin-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 70px;
+    color: #505168;
+}
+
+.admin-title a {
+    color: #505168;
+
+    text-decoration: none;
+
+}
+
+.admin2-header {
+    color: black;
+}
+
+.admin1-header {
+    color: black;
+}
+
 @media screen and (min-width: 803px) {
     .preference-list {
         height: 100px;
