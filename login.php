@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id'])) {
                     </label>
 
                     <p>I don't have an account yet.</p>
-                    <a href="../sign_up.php" class="normal-hover-pointer redirect-login-sign_up">go to sign up</a>
+                    <a href="../sign-up.php" class="normal-hover-pointer redirect-login-sign_up">go to sign up</a>
 
                     <div class="login-button-wrapper">
                         <div>

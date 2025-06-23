@@ -1,36 +1,21 @@
 <?php
-session_start();
-include('./dbcalls/conn.php');
+include('./dbcalls/read-profile.php');
+
 
 $user_id = $_SESSION['user_id'];
 
-$success = $error = '';
+$success = '';
+$error = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = trim($_POST["name"] ?? '');
-    $email = trim($_POST["email"] ?? '');
-    $phone = trim($_POST["phone"] ?? '');
-    $address = trim($_POST["address"] ?? '');
-
-    if (empty($name) || empty($email)) {
-        $error = "Name and email are required.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = "Invalid email format.";
-    } else {
-        $stmt = $conn->prepare("UPDATE users SET name = ?, email = ?, phone = ?, address = ? WHERE user_id = ?");
-        if ($stmt->execute([$name, $email, $phone, $address, $user_id])) {
-            $success = "Profile updated successfully!";
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = $name;
-        } else {
-            $error = "Failed to update profile.";
-        }
-    }
+if (isset($_GET['success'])) {
+    $success = "Profile updated successfully!";
 }
 
-$stmt = $conn->prepare("SELECT name, email, phone, address FROM users WHERE user_id = ?");
-$stmt->execute([$user_id]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+if (isset($_GET['error'])) {
+    $error = htmlspecialchars($_GET['error']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -63,9 +48,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <p style="color: red;"><?php echo $error; ?></p>
                 <?php endif; ?>
 
-                <form method="post" class="login">
 
-                    <!-- <form method="post" action="./dbcalls/update-profile.php" class="login"> -->
+                    <form method="post" action="./dbcalls/update-profile.php" class="login"> 
                     <p>Your name.</p>
                     <label class="login-items">
                         <input type="text" name="name" placeholder="Name"
