@@ -1,6 +1,6 @@
 <?php session_start();
 
-include('./dbcalls/conn.php');
+include('./dbcalls/read.php');
 
 $acc_stmt = $conn->query("SELECT accommodation_id, name FROM accommodations");
 $accommodations = $acc_stmt->fetchAll(PDO::FETCH_ASSOC);
