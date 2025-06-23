@@ -13,13 +13,15 @@
                 echo '<li><a href="../admin.php" class="hover-pointer blue-text admin-header">Admin</a></li>';
             }
             ?>
-            <li><a href="../index.php" class="hover-pointer blue-text home-header">Home</a></li>
+            <li><a href="../index.php" class="hover-pointer blue-text home-header">Trips</a></li>
+            <li><a href="../locations.php" class="hover-pointer blue-text locations-header">Locations</a></li>
             <li><a href="../contact.php" class="hover-pointer blue-text contact-header">Contact</a></li>
+            <li><a href="../about-us.php" class="hover-pointer blue-text about-us-header">About Us</a></li>
             <li><a href="../reviews.php" class="hover-pointer blue-text reviews-header">Reviews</a></li>
             <?php
             if (isset($_SESSION['user_id'])) {
             } else {
-                echo '<li><a href="../sign_up.php" class="hover-pointer blue-text sign-up-header">Sign up</a></li>';
+                echo '<li><a href="../sign-up.php" class="hover-pointer blue-text sign-up-header">Sign up</a></li>';
             }
             ?>
         </ul>

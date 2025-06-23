@@ -3,6 +3,7 @@ session_start();
 include('./dbcalls/conn.php');
 
 $user_id = $_SESSION['user_id'];
+
 $success = $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -31,8 +32,10 @@ $stmt = $conn->prepare("SELECT name, email, phone, address FROM users WHERE user
 $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -45,7 +48,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <body>
 
     <header class="profile">
-        <?php include('./includes/small_header.php'); ?>
+
+        <?php include('./includes/small-header.php'); ?>
     </header>
 
     <main>
@@ -60,30 +64,34 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <?php endif; ?>
 
                 <form method="post" class="login">
+
+                    <!-- <form method="post" action="./dbcalls/update-profile.php" class="login"> -->
                     <p>Your name.</p>
                     <label class="login-items">
-                        <input type="text" name="name" placeholder="Name" class="login-input-inline login-input normal-hover-pointer"
+                        <input type="text" name="name" placeholder="Name"
+                            class="login-input-inline login-input normal-hover-pointer"
                             value="<?php echo htmlspecialchars($user['name'] ?? ''); ?>">
                     </label><br>
-
                     <p>Your email.</p>
                     <label class="login-items">
-                        <input type="email" name="email" placeholder="Email" class="login-input-inline login-input normal-hover-pointer"
+                        <input type="email" name="email" placeholder="Email"
+                            class="login-input-inline login-input normal-hover-pointer"
                             value="<?php echo htmlspecialchars($user['email'] ?? ''); ?>">
                     </label><br>
 
                     <p>Your phone number.</p>
                     <label class="login-items">
-                        <input type="number" name="phone" placeholder="Phone" class="login-input-inline login-input normal-hover-pointer"
+                        <input type="number" name="phone" placeholder="Phone"
+                            class="login-input-inline login-input normal-hover-pointer"
                             value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>">
                     </label><br>
-                    
+
                     <p>Your address.</p>
                     <label class="login-items">
-                        <input type="text" name="address" placeholder="Address" class="login-input-inline login-input normal-hover-pointer"
+                        <input type="text" name="address" placeholder="Address"
+                            class="login-input-inline login-input normal-hover-pointer"
                             value="<?php echo htmlspecialchars($user['address'] ?? ''); ?>">
                     </label><br>
-                    
                     <label class="login-button hover-pointer">
                         <input type="submit" value="Update" class="input-inline login-input">
                     </label><br>
