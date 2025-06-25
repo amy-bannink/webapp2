@@ -598,7 +598,9 @@ footer {
 .acc,
 .fli,
 .loc,
-.btn {
+.btn,
+.cancel-button,
+.pay-button {
     width: 75%;
     padding: 6px;
     background-color: #DCC48E;
@@ -607,7 +609,7 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.trip-title {
+.trip-title, .your-orders-title {
     padding: 6px;
     background-color: #B3C0A4;
     border-radius: 6px;
@@ -662,14 +664,13 @@ footer {
 }
 
 .admin-read-messages,
-.admin-unread-messages {
+.admin-unread-messages,
+.order-item {
     width: 300px;
     background-color: #B3C0A4;
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-
-
 }
 
 .admin-create-section {
@@ -773,6 +774,49 @@ footer {
 .admin1-header {
     color: black;
 }
+
+/* profile pagina */
+
+.your-orders{
+    display: flex;
+    align-items: center;
+justify-content: center;   
+ margin-top: 60px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.order-link{
+    margin-top: 10px;
+}
+
+.profile-orders{
+    align-items: center;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.your-orders-title{
+    background-color: #DCC48E;
+    height: 60px;
+}
+
+.order-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.cancel-button:hover{
+    background-color: red;
+}
+
+.pay-button:hover{
+        background-color: #27233A;
+        color: white;
+
+}
+
 
 @media screen and (min-width: 803px) {
     .preference-list {

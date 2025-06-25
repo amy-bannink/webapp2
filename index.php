@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Home</title>
@@ -44,12 +44,6 @@
                     echo '🏡 Accommodatie zonder vlucht';
                 }
 
-
-                if (!empty($trip['departure_airport']) && !empty($trip['arrival_airport'])) {
-                    echo '✈️ ' . $trip['departure_airport'] . ' → ' . $trip['arrival_airport'];
-                } else {
-                    echo '🏡 Accommodatie zonder vlucht';
-                }
 
                 echo '</div>
             </div>';

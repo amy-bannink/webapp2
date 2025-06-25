@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include('conn.php');
 
 $user_id = $_SESSION['user_id'] ?? null;

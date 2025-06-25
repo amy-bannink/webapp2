@@ -25,9 +25,9 @@ require_once('./dbcalls/conn.php');
 if (isset($_SESSION['search_results']) && count($_SESSION['search_results']) > 0) {
     foreach ($_SESSION['search_results'] as $trip) {
         echo '<div class="grid-item">
-                <img src="'. $trip['location_img'] . '" alt="'. $trip['location'] . '">
+                <img src="'. $trip['location_img'] . '" alt="'. $trip['city_name'] . '">
                 <div class="label">
-                    <strong>' . $trip['location'] . '</strong><br>';
+                    <strong>' . $trip['city_name'] . '</strong><br>';
 
         $accommodationPrice = (float) $trip['price_per_night'];
         $flightPrice = !empty($trip['price']) ? (float) $trip['price'] : 0;
