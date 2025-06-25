@@ -35,28 +35,28 @@ include('./dbcalls/read-trip.php');
             '<p>' . $result['trip_description'] . '</p>' .
             '</div>' .
             '<section class="acc">' .
-            '<h2>Accommodation Details</h2>' .
-            '<h3>' . $result['name'] . '</h3>' .
-            '<p>' . $result['accommodation_description'] . '</p>' .
-            '<p>' . $result['max_guests'] . '</p>' .
-            '<p>' . $result['price_per_night'] . '</p>' .
+            '<h2>Accommodation Details</h2>'.
+            '<h3>' . $result['name'] . '</h3> <br>' .
+            '<p><strong>Description: </strong>' . $result['accommodation_description'] . '</p>' .
+            '<p><strong>Max guests: </strong>' . $result['max_guests'] . '</p>' .
+            '<p><strong>Price per night: </strong>' . $result['price_per_night'] . '</p>' .
             '</section>' .
             '<section class="fli">' .
             '<h2>Flight Details</h2>' .
-            '<h3>' . $result['airline'] . '</h3>' .
-            '<p>' . $result['departure_airport'] . '</p>' .
-            '<p>' . $result['arrival_airport'] . '</p>' .
-            '<p>' . $result['departure_date'] . '</p>' .
-            '<p>' . $result['arrival_date'] . '</p>' .
-            '<p>' . $result['price'] . '</p>' .
+            '<h3>' . $result['airline'] . '</h3> <br>' .
+            '<p><strong>Departure airport: </strong>' . $result['departure_airport'] . '</p>' .
+            '<p><strong>Arrival airport: </strong>' . $result['arrival_airport'] . '</p>' .
+            '<p><strong>Departure date: </strong>' . $result['departure_date'] . '</p>' .
+            '<p><strong>Arrival date: </strong>' . $result['arrival_date'] . '</p>' .
+            '<p><strong>Flight price: </strong>' . $result['price'] . '</p>' .
             '</section>' .
             '<section class="loc">' .
             '<h2>Location Details</h2>' .
-            '<h3>' . $result['city_name'] . $result['country_name'] . '</h3>' .
-            '<p>' . $result['region'] . '</p>' .
-            '<p>' . $result['description'] . '</p>' .
-            '<p>' . $result['highlights'] . '</p>' .
-            '<p>' . $result['climate'] . '</p>' .
+            '<h3>' . $result['city_name'] . ', ' . $result['country_name'] . '</h3> <br>' .
+            '<p><strong>Region: </strong>' . $result['region'] . '</p>' .
+            '<p><strong>Description: </strong>' . $result['description'] . '</p>' .
+            '<p><strong>Highlights: </strong>' . $result['highlights'] . '</p>' .
+            '<p><strong>Climate: </strong>' . $result['climate'] . '</p>' .
             '</section>' .
             '<section class="loc">' .
 

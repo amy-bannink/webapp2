@@ -576,7 +576,9 @@ footer {
 .acc,
 .fli,
 .loc,
-.btn {
+.btn,
+.cancel-button,
+.pay-button {
     width: 75%;
     padding: 6px;
     background-color: #DCC48E;
@@ -777,6 +779,22 @@ justify-content: center;
     background-color: #DCC48E;
     height: 60px;
 }
+
+.order-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.cancel-button:hover{
+    background-color: red;
+}
+
+.pay-button:hover{
+        background-color: #27233A;
+        color: white;
+
+}
+
 
 @media screen and (min-width: 803px) {
     .preference-list {
