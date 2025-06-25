@@ -42,14 +42,12 @@ $unreadMessage = array_values($unreadMessages)[$unreadIndex] ?? null;
     <main>
          <div class="admin-title">
             <a href="admin.php">
-                <h2 class="admin1-header">Administration</h2>
+                <h2 class="admin1-header hover-pointer">Administration</h2>
             </a>
             <a href="admin-crud.php">
-                <h2>Crud system</h2>
+                <h2 class="hover-pointer">Crud system</h2>
             </a>
         </div>
-
-
 
         <div class="admin-messages">
 
@@ -79,7 +77,7 @@ $unreadMessage = array_values($unreadMessages)[$unreadIndex] ?? null;
                         <form method="post" action="/dbcalls/delete-message.php"
                             onsubmit="return confirm('Are  you sure you want to delete this message?');">
                             <input type="hidden" name="contact_id" value="<?= $readMessage['contact_id'] ?>">
-                            <button type="submit" class="delete-message-btn">Delete message</button>
+                            <button type="submit" class="delete-message-btn normal-hover-pointer">Delete message</button>
                         </form>
                     </div>
 
@@ -108,7 +106,7 @@ $unreadMessage = array_values($unreadMessages)[$unreadIndex] ?? null;
                         <form method="post" action="./dbcalls/update-message.php"
                             onsubmit="return confirm('Mark this message as read?');">
                             <input type="hidden" name="contact_id" value="<?= $unreadMessage['contact_id'] ?>">
-                            <button type="submit" class="mark-read-btn">Mark as read</button>
+                            <button type="submit" class="mark-read-btn normal-hover-pointer">Mark as read</button>
                         </form>
 
                         <!-- <form method="post" action="reply.php">
@@ -121,7 +119,7 @@ $unreadMessage = array_values($unreadMessages)[$unreadIndex] ?? null;
                         <form method="post" action="/dbcalls/delete-message.php"
                             onsubmit="return confirm('Are  you sure you want to delete this message?');">
                             <input type="hidden" name="contact_id" value="<?= $unreadMessage['contact_id'] ?>">
-                            <button type="submit" class="delete-message-btn">Delete message</button>
+                            <button type="submit" class="delete-message-btn normal-hover-pointer">Delete message</button>
                         </form>
                     </div>
 

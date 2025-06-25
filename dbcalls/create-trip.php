@@ -6,12 +6,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect form input
     $accommodation_name = $_POST['accomodation_name'];
     $location_id = $_POST['location_id'];
-    $description_acc = $_POST['description'];
+    $trip_description = $_POST['trip_description'];
     $price_per_night = $_POST['price_per_night'];
     $max_guests = $_POST['max_guests'];
 
     $trip_name = $_POST['trip_name'];
-    $trip_description = $_POST['description'];
+    $trip_description = $_POST['trip_description'];
     $flight_id = $_POST['flights'];
 
     // Handle image upload
@@ -46,15 +46,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert accommodation
         $stmt = $conn->prepare("
             INSERT INTO accommodations 
-            (name, location_id, image, description, price_per_night, max_guests) 
+            (name, location_id, image, trip_description, price_per_night, max_guests) 
             VALUES 
-            (:name, :location_id, :image, :description, :price_per_night, :max_guests)
+            (:name, :location_id, :image, :trip_description, :price_per_night, :max_guests)
         ");
 
         $stmt->bindParam(':name', $accommodation_name);
         $stmt->bindParam(':location_id', $location_id);
         $stmt->bindParam(':image', $imagePath);
-        $stmt->bindParam(':description', $description_acc);
+        $stmt->bindParam(':trip_description', $trip_description);
         $stmt->bindParam(':price_per_night', $price_per_night);
         $stmt->bindParam(':max_guests', $max_guests, PDO::PARAM_INT);
 
@@ -64,13 +64,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert trip
         $stmt2 = $conn->prepare("
             INSERT INTO trips 
-            (trip_name, description, flight_id, accommodation_id) 
+            (trip_name, trip_description, flight_id, accommodation_id) 
             VALUES 
-            (:trip_name, :description, :flight_id, :accommodation_id)
+            (:trip_name, :trip_description, :flight_id, :accommodation_id)
         ");
 
         $stmt2->bindParam(':trip_name', $trip_name);
-        $stmt2->bindParam(':description', $trip_description);
+        $stmt2->bindParam(':trip_description', $trip_description);
         $stmt2->bindParam(':flight_id', $flight_id, PDO::PARAM_INT);
         $stmt2->bindParam(':accommodation_id', $accommodation_id, PDO::PARAM_INT);
 
