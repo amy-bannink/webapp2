@@ -67,7 +67,9 @@ include('./dbcalls/read-trip.php');
         <?php if (isset($_SESSION['user_id'])): ?>
             <section class="btn">
 
-                <form action="book-trip.php" method="POST">
+                <form action="./dbcalls/create-order.php" method="POST">
+                    <input type="number" name="guests" required min="1" max="<?php $result['max_guests'] ?>" placeholder="Guests">
+                    <input type="number" name="nights" required placeholder="Nights">
                     <input type="hidden" name="trip_id" value="<?php echo $trip_id; ?>">
                     <button type="submit" class="trip-button">Book this trip</button>
                 </form>

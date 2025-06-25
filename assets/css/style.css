@@ -585,7 +585,7 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.trip-title {
+.trip-title, .your-orders-title {
     padding: 6px;
     background-color: #B3C0A4;
     border-radius: 6px;
@@ -640,14 +640,13 @@ footer {
 }
 
 .admin-read-messages,
-.admin-unread-messages {
+.admin-unread-messages,
+.order-item {
     width: 300px;
     background-color: #B3C0A4;
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-
-
 }
 
 .admin-create-section {
@@ -750,6 +749,33 @@ footer {
 
 .admin1-header {
     color: black;
+}
+
+/* profile pagina */
+
+.your-orders{
+    display: flex;
+    align-items: center;
+justify-content: center;   
+ margin-top: 60px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.order-link{
+    margin-top: 10px;
+}
+
+.profile-orders{
+    align-items: center;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.your-orders-title{
+    background-color: #DCC48E;
+    height: 60px;
 }
 
 @media screen and (min-width: 803px) {

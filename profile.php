@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./dbcalls/read-profile.php');
 
 
@@ -49,7 +50,7 @@ if (isset($_GET['error'])) {
                 <?php endif; ?>
 
 
-                    <form method="post" action="./dbcalls/update-profile.php" class="login"> 
+                <form method="post" action="./dbcalls/update-profile.php" class="login">
                     <p>Your name.</p>
                     <label class="login-items">
                         <input type="text" name="name" placeholder="Name"
@@ -88,6 +89,52 @@ if (isset($_GET['error'])) {
                 </form>
             </div>
         </div>
+        <?php include('./dbcalls/read-order.php'); ?>
+        <section class="profile-orders">
+            <h2 class="your-orders-title">Your orders</h2>
+            <div class="your-orders">
+            <?php
+            if (count($orders) < 1) {
+                echo '<div class="order-item"><p><strong>No orders yet.</strong></p></div';
+            } else {
+                // var_dump($orders);
+                foreach ($orders as $orderedTrip) {
+
+                    echo '<div class="order-item">
+                    <p><strong>Order date: </strong>' . $orderedTrip['order_date'] . '</p>
+                    <p><strong>Status: </strong>' . $orderedTrip['status'] . '</p>
+                    <p><strong>Guests: </strong>' . $orderedTrip['guests'] . '</p>
+                    <p><strong>Total price: </strong>' . $orderedTrip['price_total'] . '</p>
+
+                    
+                    <a href="trip.php?id=' . $orderedTrip['trip_id'] . '"class="grid-link order-link">
+        <div class="grid-item">
+                <img src="' . $orderedTrip['location_img'] . '" alt="' . $orderedTrip['city_name'] . '">
+                <div class="label">
+                    <strong>' . $orderedTrip['trip_name'] . '</strong><br>';
+
+                    $accommodationPrice = (float) $orderedTrip['price_per_night'];
+                    $flightPrice = !empty($orderedTrip['price']) ? (float) $orderedTrip['price'] : 0;
+                    $totalPrice = $accommodationPrice + $flightPrice;
+
+                    echo 'Vanaf: €' . number_format($totalPrice, 0, ',', '.') . '<br>';
+
+                    if (!empty($orderedTrip['departure_airport']) && !empty($orderedTrip['arrival_airport'])) {
+                        echo '✈️ ' . $orderedTrip['departure_airport'] . ' → ' . $orderedTrip['arrival_airport'];
+                    } else {
+                        echo '🏡 Accommodatie zonder vlucht';
+                    }
+
+                    echo '</div>
+            </div>
+            </a>
+            </div>';
+                }
+            }
+            ?>
+</div>
+        </section>
+
 
     </main>
 

@@ -56,7 +56,7 @@
 
             <div>
                 <label class="preference-items">
-                    <input type="number" id="who" name="who" class="input-inline normal-hover-pointer"
+                    <input type="number" id="who" name="guests" class="input-inline normal-hover-pointer"
                         placeholder="How many" min="1">
                 </label>
             </div>
